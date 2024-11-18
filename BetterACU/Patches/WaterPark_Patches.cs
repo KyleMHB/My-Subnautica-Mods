@@ -196,13 +196,6 @@ internal class WaterParkBreedPostfix
 
 				if (!breedCounts.TryGetValue(creatureTechString, out int count))
 					count = breedCounts[creatureTechString] = 0;
-
-				if (count < limit && !hasBred && __instance.transform.position.y < 0)
-				{
-					hasBred = true;
-					breedCounts[creatureTechString] = count + 1;
-					CoroutineHost.StartCoroutine(SpawnCreature(__instance, parkCreatureTechType, null));
-				}
 			}
 
 			if (hasBred)
